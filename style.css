@@ -4,19 +4,6 @@ body{background: radial-gradient(circle, #2ecc71, #f39c12);}
   display: flex;
 }
 
-/* cria uma coluna de imagem que ocupa 25% da largura da linha */
-.column {
-  flex: 25%;
-  padding: 5px;
-}
-
-/* adiciona uma borda às imagens */
-img {
-  border: 1px solid #b16003;
-  border-radius: 4px;
-  padding: 5px;
-}
-
 .carousel {
   display: block;
   max-width: 800px;
