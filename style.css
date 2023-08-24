@@ -53,13 +53,13 @@ img {
 /* styles.css */
 .carousel {
   display: block;
-  max-width: 100%;
+  max-width: 80%;
   margin: 0 auto;
   overflow: hidden;
 }
 
 .carousel img {
-  width: 100%;
+  width: 80%;
   height: auto;
   display: none;
   max-width: 2700px; /* Defina a largura desejada */
