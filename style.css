@@ -1,4 +1,4 @@
-body{background: radial-gradient(circle, #2ecc71, #f39c12);}
+body{background: radial-gradient(circle, #30cc71, #f39c12);}
 /* cria uma linha flexível para alinhar as imagens horizontalmente */
 .row {
   display: flex;
