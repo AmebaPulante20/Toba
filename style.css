@@ -62,6 +62,6 @@ img {
   width: 100%;
   height: auto;
   display: none;
-  max-width: 400px; /* Defina a largura desejada */
-  max-height: 300px; /* Defina a altura desejada */
+  max-width: 1000px; /* Defina a largura desejada */
+  max-height: 900px; /* Defina a altura desejada */
 }
