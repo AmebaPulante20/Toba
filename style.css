@@ -54,7 +54,6 @@ img {
 .carousel {
   display: block;
   max-width: 100%;
-  max-height: 300px;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -62,6 +61,7 @@ img {
 .carousel img {
   width: 100%;
   height: auto;
-  object-fit: cover; /* Ajusta a imagem mantendo a proporção e cobrindo o espaço */
   display: none;
+  max-width: 400px; /* Defina a largura desejada */
+  max-height: 300px; /* Defina a altura desejada */
 }
