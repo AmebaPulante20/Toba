@@ -1,0 +1,51 @@
+body{background: radial-gradient(circle, #2ecc71, #f39c12);}
+/* cria uma linha flexível para alinhar as imagens horizontalmente */
+.row {
+  display: flex;
+}
+
+/* cria uma coluna de imagem que ocupa 25% da largura da linha */
+.column {
+  flex: 25%;
+  padding: 5px;
+}
+
+/* adiciona uma borda às imagens */
+img {
+  border: 1px solid #b16003;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.carousel {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+.carousel img.active {
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
