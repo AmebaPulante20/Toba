@@ -60,13 +60,132 @@
 <p><strong>4. </strong>Abra a Arduino IDE, conecte o Arduino ao computador via USB e escolha a placa e a porta corretas nas opções de menu. Em seguida, clique no botão "Enviar" para carregar o código no Arduino. </p>
 <p><strong>5. </strong>Agora que você carregou o código, observe o semáforo em funcionamento. Os LEDs e o buzzer indicarão os estados de carros e pedestres. </p>
   
+<strong>Código utilizado no processo:</strong>
+<p>const int greenLED = 2;
+  const int yellowLED = 3;
+  const int redLED = 4;
+  const int pedestrianRedLED = 5;
+  const int pedestrianGreenLED = 6;
+  const int pedestrianButton = 7; // Pino do botão de pedestres
+  const int buzzerPin = 8; // Pino onde o buzzer ou alto-falante está conectado
+  const int carChangeLED = 9; // LED de confirmação visual para carros
+  const int pedestrianChangeLED = 10; // LED de confirmação visual para pedestres
+  
+  bool pedestrianButtonPressed = false;
+  
+  void setup() {
+    pinMode(greenLED, OUTPUT);
+    pinMode(yellowLED, OUTPUT);
+    pinMode(redLED, OUTPUT);
+    pinMode(pedestrianRedLED, OUTPUT);
+    pinMode(pedestrianGreenLED, OUTPUT);
+    pinMode(pedestrianButton, INPUT_PULLUP); // Ativa o resistor de pull-up interno
+    pinMode(buzzerPin, OUTPUT);
+    pinMode(carChangeLED, OUTPUT);
+    pinMode(pedestrianChangeLED, OUTPUT);
+  }
+  
+  void beep(int duration) {
+    tone(buzzerPin, 1000); // Gere um som de 1kHz no buzzer
+    delay(duration); // Aguarde a duração do som
+    noTone(buzzerPin); // Pare o som
+  }
+  
+  void visualConfirmation(int ledPin, int duration) {
+    digitalWrite(ledPin, HIGH);
+    delay(duration);
+    digitalWrite(ledPin, LOW);
+  }
+  
+  void loop() {
+    // Leitura do botão de pedestres
+    bool buttonState = digitalRead(pedestrianButton);
+  
+    // Define os tempos de duração das luzes
+    unsigned long currentTime = millis();
+    static unsigned long previousTime = 0;
+    static int currentState = 0;
+  
+    const unsigned long greenTime = 8000;  // 8 segundos
+    const unsigned long yellowTime = 1000; // 1 segundo
+    const unsigned long redTime = 10000;   // 10 segundos
+    const unsigned long pedestrianGreenTime = 5000; // 5 segundos
+    const unsigned long pedestrianRedTime = 5000;   // 5 segundos
+    const unsigned long timeToNotify = 2000; // Tempo para notificar a mudança em milissegundos
+  
+    switch (currentState) {
+      case 0: // Verde
+        digitalWrite(greenLED, HIGH);
+        digitalWrite(yellowLED, LOW);
+        digitalWrite(redLED, LOW);
+        digitalWrite(pedestrianRedLED, HIGH);
+        digitalWrite(pedestrianGreenLED, LOW);
+        if (buttonState && !pedestrianButtonPressed) {
+          pedestrianButtonPressed = true;
+          currentState = 3; // Vá para o sinal de pedestres
+        } else if (currentTime - previousTime >= greenTime - timeToNotify) {
+          previousTime = currentTime;
+          beep(1000); // Notificar que o sinal está prestes a mudar
+          visualConfirmation(carChangeLED, 1000); // Confirmar visualmente a mudança
+          currentState = 1;
+        }
+        break;
+  
+      // ... (outros casos permanecem os mesmos)
+  
+      case 3: // Sinal de pedestres em transição
+        digitalWrite(greenLED, LOW);
+        digitalWrite(yellowLED, LOW);
+        digitalWrite(redLED, HIGH);
+        digitalWrite(pedestrianRedLED, LOW);
+        digitalWrite(pedestrianGreenLED, HIGH);
+        if (buttonState) {
+          pedestrianButtonPressed = true;
+          currentState = 4; // Sinal de pedestres verde
+        } else if (currentTime - previousTime >= pedestrianGreenTime - timeToNotify) {
+          previousTime = currentTime;
+          beep(1000); // Notificar que o sinal está prestes a mudar
+          visualConfirmation(pedestrianChangeLED, 1000); // Confirmar visualmente a mudança
+          currentState = 4;
+        }
+        break;
+  
+      case 4: // Sinal de pedestres verde
+        digitalWrite(greenLED, LOW);
+        digitalWrite(yellowLED, LOW);
+        digitalWrite(redLED, HIGH);
+        digitalWrite(pedestrianRedLED, HIGH);
+        digitalWrite(pedestrianGreenLED, HIGH);
+        if (currentTime - previousTime >= pedestrianRedTime || buttonState) {
+          pedestrianButtonPressed = false;
+          previousTime = currentTime;
+          beep(1000); // Notificar que o sinal está prestes a mudar
+          visualConfirmation(carChangeLED, 1000); // Confirmar visualmente a mudança
+          currentState = 0; // Volte ao sinal de veículos verde
+        }
+        break;
+    }
+  }</p>
+
       <h3>Segundo Projeto</h3>
   
     <div class="destino">
       <img src="WhatsApp Image 2023-05-19 at 11.10.25.jpeg" alt="Sudeste Asiático" style="width:35%">
       <p>No segundo projeto, nosso principal objetivo é:</p>
+<p>Produzir uma centra de segurança com os recursos:</p>
+<p>- Verificação de passagem com o censor LDR. Tem que ter uma fonte luz e o LDR tem que estar em capsulado para a luz ambiente não interferir.</p>
+<p>- Três botões para codificação de senha que deve ter 6 dígitos.</p>
+<p>- Um botão para confirmar que a senha foi digitada.</p>
+<p>- Um controlador de tempo para verifica se a pessoa digitou a senha antes de ativar o alarme.</p>
+<p>- Usar o Buzzer para simular o som da sirene quando o alarme estiver disparado.</p>   
+<p>- Um Led indicador que foi digitado a senha correta.</p>
+<p>- Um Led indicador de que a senha deve ser digitada.</p>
 
-        <button onclick="window.location.href='#Viagens-Maravilhosas'">Voltar Ao Topo</button>
+<h2>ALGORITIMO DE MONTAGEM</h2>
+
+
+
+<button onclick="window.location.href='#Viagens-Maravilhosas'">Voltar Ao Topo</button>
 
         <h3><p id="funcionarios-do-mes">Funcionários do mês:</p></h3>
 
