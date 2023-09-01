@@ -193,6 +193,85 @@
 <p><strong>6.</strong>Dentro do loop principal, você pode adicionar a lógica específica para o alarme quando ele está ativado.</p>
   <p>Este é um esboço básico do algoritmo para montar uma central de segurança com as características especificadas.</p>
 
+  <strong>Código utilizado no processo</strong>
+
+<p>#include <Arduino.h>
+
+  const int LDRPin = A0;        // Pino do sensor LDR
+  const int buzzerPin = 8;      // Pino do buzzer
+  const int correctLEDPin = 9;  // Pino do LED para senha correta
+  const int inputLEDPin = 10;   // Pino do LED para entrada da senha
+  const int buttonPins[3] = {2, 3, 4};  // Pinos dos botões de senha
+  const int confirmButtonPin = 5;      // Pino do botão de confirmação
+  const unsigned long passwordTimeout = 10000;  // Tempo limite para inserção da senha (em milissegundos)
+  const char correctPassword[] = "123456";      // Senha correta de 6 dígitos
+  
+  char enteredPassword[7] = "";
+  unsigned long lastButtonPressTime = 0;
+  boolean passwordMode = false;
+  
+  void setup() {
+    pinMode(LDRPin, INPUT);
+    pinMode(buzzerPin, OUTPUT);
+    pinMode(correctLEDPin, OUTPUT);
+    pinMode(inputLEDPin, OUTPUT);
+  
+    for (int i = 0; i < 3; i++) {
+      pinMode(buttonPins[i], INPUT_PULLUP);
+    }
+  
+    pinMode(confirmButtonPin, INPUT_PULLUP);
+  
+    Serial.begin(9600);
+  }
+  
+  void loop() {
+    int lightValue = analogRead(LDRPin);
+    boolean isLightOn = lightValue < 500;  // Ajuste o valor conforme necessário
+  
+    // Verifica se o sensor LDR detectou luz
+    if (isLightOn) {
+      digitalWrite(inputLEDPin, HIGH); // Indica que a senha deve ser digitada
+      passwordMode = true;
+    } else {
+      digitalWrite(inputLEDPin, LOW);
+      passwordMode = false;
+    }
+  
+    // Verifica se algum botão de senha foi pressionado
+    for (int i = 0; i < 3; i++) {
+      if (digitalRead(buttonPins[i]) == LOW) {
+        enteredPassword[strlen(enteredPassword)] = '0' + i + 1;
+        delay(200); // Debounce
+        digitalWrite(correctLEDPin, LOW);
+      }
+    }
+  
+    // Verifica se o botão de confirmação foi pressionado
+    if (digitalRead(confirmButtonPin) == LOW && passwordMode) {
+      if (strcmp(enteredPassword, correctPassword) == 0) {
+        digitalWrite(correctLEDPin, HIGH);  // Senha correta, acende o LED
+        digitalWrite(buzzerPin, LOW);       // Desativa o alarme
+        delay(1000);
+      } else {
+        digitalWrite(buzzerPin, HIGH);  // Ativa o alarme
+        delay(2000);
+        digitalWrite(buzzerPin, LOW);
+      }
+      resetPassword();
+    }
+  
+    // Verifica o timeout da senha
+    if (passwordMode && (millis() - lastButtonPressTime) > passwordTimeout) {
+      resetPassword();
+    }
+  }
+  
+  void resetPassword() {
+    memset(enteredPassword, 0, sizeof(enteredPassword));
+    digitalWrite(correctLEDPin, LOW);
+  }
+</p>
 
 <button onclick="window.location.href='#Viagens-Maravilhosas'">Voltar Ao Topo</button>
 
