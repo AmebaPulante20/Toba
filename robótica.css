@@ -1,1 +1,9 @@
 body{background:#F5F5DC;}
+
+.caribe img {
+    width: 80%;
+    height: auto;
+    display: none;
+    max-width: 800px; 
+    max-height: 600px;
+}
