@@ -1,9 +1,1 @@
 body{background:#F5F5DC;}
-
-.carousel img {
-    width: 80%;
-    height: auto;
-    display: none;
-    max-width: 1500px; /* Defina a largura desejada */
-    max-height: 900px; /* Defina a altura desejada */
-  }
