@@ -1,5 +1,12 @@
 function Toca () {
     document.querySelector('#som_tecla_pom').play();
 }
+const lista = document.querySelectorAll('.tecla');
 
-document.querySelector('.tecla_pom');
+let Contador = 0;
+
+while (Contador < 9) {
+    lista[Contador].onclick = Toca;
+    Contador = Contador + 1;
+    console.log(contador);
+}
