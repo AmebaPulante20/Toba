@@ -7,11 +7,11 @@ let contador = 0;
 
 
 
-while (Contador < 9) {
-    lista[Contador].onclick = tocar;
+while (contador < 9) {
+    lista[contador].onclick = Toca;
 const classe = lista[contador].classList[1];
 console.log(classe);
-    Contador = Contador + 1;
+    contador = contador + 1;
     console.log(contador);
     
 }
