@@ -5,13 +5,13 @@ const lista = document.querySelectorAll('.tecla');
 
 let contador = 0;
 
-const classe = lista[contador].classList[1];
-console.log(classe);
+
 
 while (Contador < 9) {
-    //acessano o elemento da lista
-    lista[Contador].onclick = Toca;
-    //contdor mudou de valor
+    lista[Contador].onclick = tocar;
+const classe = lista[contador].classList[1];
+console.log(classe);
     Contador = Contador + 1;
     console.log(contador);
+    
 }
