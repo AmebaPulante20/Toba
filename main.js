@@ -21,12 +21,12 @@ while (contador < lista.length) {
     console.log(contador);
 tecla.onkeydown = function (evento) {
     
-    lista[contador].classList.add('ativa')
-    console.log(evento.code === 'Space')
+    tecla.classList.add('ativa')
+    console.log(evento.code === 'Space' || evento.code === 'Enter')
     
 }
     tecla.onkeyup = function () {
-       lista[contador].classList.remove('ativa') 
+       tecla.classList.remove('ativa') 
     }
     
 
