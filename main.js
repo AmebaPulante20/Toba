@@ -8,17 +8,17 @@ let contador = 0;
 while (contador < lista.length) {
     const tecla = lista[contador]
     const classe = tecla.classList[1];
-    console.log(classe);
+    //console.log(classe);
 
     const idAudio = `#som_${classe}`;
-    console.log(idAudio);
+    //console.log(idAudio);
 
     tecla.onclick = function () {
         Toca(idAudio);
     }
 
     contador = contador + 1;
-    console.log(contador);
+    //console.log(contador);
 tecla.onkeydown = function (evento) {
     
     tecla.classList.add('ativa')
