@@ -22,7 +22,7 @@ while (contador < lista.length) {
 tecla.onkeydown = function (evento) {
     
     lista[contador].classList.add('ativa')
-    console.log(evento.key)
+    console.log(evento.code === 'Space')
     
 }
     tecla.onkeyup = function () {
