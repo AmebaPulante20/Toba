@@ -26,17 +26,23 @@ function texto(){
   
   }
   
-  function numero(){
-    var number = document.getElementById("som");
+  function texto(){
+    //elemento pego do id//
+    var num = document.getElementById("som");
     var num2 = document.getElementById("som2");
-    var conv = number.value;
-    var conv2 = num2.value;
-    var resultado = parseFloat(conv + conv2);
-    var resul2 = parseFloat(conv2 + conv);
-    var mostrar = document.getElementById("show9");
-    var ver = "o resultado da soma é " + resultado;mostrar.innerHTML = ver
+    //convertendo para " int "//
+    var conversao = num.value;
+    var conv2 = num2.value
+    //onde é feito a conta//
+    var juncao = parseFloat(conversao + conv2 );
+    var juncao2=parseFloat(conv2 + conversao);
+    //mostrar na pagina//
+    var body = document.getElementById("show9");
+    var mostrar = " o resultado da soma é " + juncao2;body.innerHTML = mostrar  
   
   }
+  
+  
 
   function number(){
     var num = document.getElementById("num2");
