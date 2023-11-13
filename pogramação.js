@@ -28,11 +28,11 @@ function texto(){
   
   function soma(){
     //elemento pego do id//
-    var num = document.getElementById("som");
-    var num2 = document.getElementById("som2");
+    var som = document.getElementById("som");
+    var som2 = document.getElementById("som2");
     //convertendo para " int "//
-    var conversao = num.value;
-    var conv3 = num2.value
+    var conversao = som.value;
+    var conv3 = som2.value
     //onde é feito a conta//
     var juncao3 = parseFloat(conversao + conv3 );
     var juncao4=parseFloat(conv3 + conversao);
