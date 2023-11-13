@@ -34,7 +34,7 @@ function texto(){
     var float1 = parseFloat (rev1);
     console.log(float1)
     var mostrar = document.getElementById("show3");
-    var show = "o resultado da subtração é " + float1;mostrar.innerHTML = show
+    var show = "o resultado da soma é " + float1;mostrar.innerHTML = show
     
   }
   
