@@ -26,6 +26,18 @@ function texto(){
   
   }
   
+  function numero(){
+    var number = document.getElementById("som");
+    var num2 = document.getElementById("som2");
+    var conv = number.value;
+    var conv2 = num2.value;
+    var resultado = parseFloat(conv + conv2);
+    var resul2 = parseFloat(conv2 + conv);
+    var mostrar = document.getElementById("show2");
+    var ver = "o resultado da soma é " + resultado;mostrar.innerHTML = ver
+  
+  }
+
   function number(){
     var num = document.getElementById("num2");
     var num2 = document.getElementById("num3");
@@ -34,7 +46,8 @@ function texto(){
     var float1 = parseFloat (rev1);
     console.log(float1)
     var mostrar = document.getElementById("show3");
-    var show = "o resultado da soma é " + float1;mostrar.innerHTML = show
+    var show = "o resultado da subtração é " + float1;mostrar.innerHTML = show
+    
     
   }
   
@@ -54,3 +67,4 @@ function texto(){
     var end = "o resultado da potência é " + final;log.innerHTML = end
   
   }
+  
