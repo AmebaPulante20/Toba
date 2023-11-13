@@ -26,7 +26,7 @@ function texto(){
   
   }
   
-  function numero(){
+  function soma(){
     var soma = document.getElementById("som");
     var soma1 = document.getElementById("som2");
     var conv1 = soma.value;
@@ -34,7 +34,7 @@ function texto(){
     var resultado = parseFloat(conv1 + conv3);
     var resul2 = parseFloat(conv3 + conv1);
     var mostrar = document.getElementById("show9");
-    var ver = "o resultado da soma é " + resultado;mostrar.innerHTML = ver
+    var faz = "o resultado da soma é " + resultado;mostrar.innerHTML = faz
   
   }
 
