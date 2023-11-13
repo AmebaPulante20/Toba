@@ -36,7 +36,7 @@ function texto(){
       console.log(juncao3)
     //mostrar na pagina//
     var body = document.getElementById("show9");
-    var faz = " o resultado da soma é "= faz  ;
+    var faz = " o resultado da soma é "= juncao3  ;
   
   }
 
