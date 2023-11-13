@@ -38,7 +38,7 @@ function texto(){
     var juncao4=parseFloat(conv3 + conversao);
     //mostrar na pagina//
     var body = document.getElementById("show9");
-    var faz = " o resultado da soma é " + juncao4;body.innerHTML = faz  ;
+    var faz = " o resultado da soma é " + juncao4;body.innerHTML = faz;
   
   }
   
