@@ -32,10 +32,10 @@ function texto(){
     var num2 = document.getElementById("som2");
     //convertendo para " int "//
     var conversao = num.value;
-    var conv2 = num2.value
+    var conv3 = num2.value
     //onde é feito a conta//
-    var juncao3 = parseFloat(conversao + conv2 );
-    var juncao4=parseFloat(conv2 + conversao);
+    var juncao3 = parseFloat(conversao + conv3 );
+    var juncao4=parseFloat(conv3 + conversao);
     //mostrar na pagina//
     var body = document.getElementById("show9");
     var mostrar = " o resultado da soma é " + juncao4;body.innerHTML = mostrar  
