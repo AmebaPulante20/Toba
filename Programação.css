@@ -1,9 +1,6 @@
 body{background: radial-gradient(circle, #eb39e2, #1881d8);}
 
-body{
-    background-image:linear-gradient(90deg,black,red,black);
   
-  }
   h1{
     font-family:sans-serif;
     color:white;
