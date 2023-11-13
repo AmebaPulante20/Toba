@@ -33,7 +33,7 @@ function texto(){
     var conv2 = num2.value;
     var resultado = parseFloat(conv + conv2);
     var resul2 = parseFloat(conv2 + conv);
-    var mostrar = document.getElementById("show2");
+    var mostrar = document.getElementById("show9");
     var ver = "o resultado da soma é " + resultado;mostrar.innerHTML = ver
   
   }
