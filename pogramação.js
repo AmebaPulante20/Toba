@@ -28,20 +28,19 @@ function texto(){
   
   function soma(){
     //elemento pego do id//
-    var som = document.getElementById("som");
-    var som2 = document.getElementById("som2");
+    var som = document.getElementById("som").value;
+    var som2 = document.getElementById("som2").value;
     //convertendo para " int "//
-    var conversao = som.value;
-    var conv3 = som2.value
     //onde é feito a conta//
-    var juncao3 = parseFloat(conversao + conv3 );
-    var juncao4=parseFloat(conv3 + conversao);
+    var juncao3 = parseFloat(som+som2);
+      console.log(juncao3)
     //mostrar na pagina//
     var body = document.getElementById("show9");
-    var faz = " o resultado da soma é " + juncao4;body.innerHTML = faz;
+    var faz = " o resultado da soma é "= faz  ;
   
   }
-  
+
+
   
 
   function number(){
