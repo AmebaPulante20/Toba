@@ -26,17 +26,15 @@ function texto(){
   
   }
   
-  function soma(){
-    //elemento pego do id//
-    var som = document.getElementById("som").value;
-    var som2 = document.getElementById("som2").value;
-    //convertendo para " int "//
-    //onde é feito a conta//
-    var juncao3 = parseFloat(som+som2);
-      console.log(juncao3)
-    //mostrar na pagina//
-    var body = document.getElementById("show9");
-    var faz = " o resultado da soma é "= juncao3  ;
+  function numero(){
+    var soma = document.getElementById("som");
+    var soma1 = document.getElementById("som2");
+    var conv1 = soma.value;
+    var conv3 = soma1.value;
+    var resultado = parseFloat(conv1 + conv3);
+    var resul2 = parseFloat(conv3 + conv1);
+    var mostrar = document.getElementById("show9");
+    var ver = "o resultado da soma é " + resultado;mostrar.innerHTML = ver
   
   }
 
