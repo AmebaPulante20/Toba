@@ -10,7 +10,7 @@ function texto(){
     var juncao2=parseFloat(conv2 * conversao);
     //mostrar na pagina//
     var body = document.getElementById("show");
-    var mostrar = " o resultado da multiplicação é " + juncao2;body.innerHTML = mostrar  
+    var mostrar = " o resultado da multiplicação é " + juncao2;body.innerHTML = mostrar  ;
   
   }
   
@@ -22,7 +22,7 @@ function texto(){
     var resultado = parseFloat(conv / conv2);
     var resul2 = parseFloat(conv2 / conv);
     var mostrar = document.getElementById("show2");
-    var ver = "o resultado da divisao é " + resultado;mostrar.innerHTML = ver
+    var ver = "o resultado da divisao é " + resultado;mostrar.innerHTML = ver;
   
   }
   
@@ -38,7 +38,7 @@ function texto(){
     var juncao4=parseFloat(conv3 + conversao);
     //mostrar na pagina//
     var body = document.getElementById("show9");
-    var mostrar = " o resultado da soma é " + juncao4;body.innerHTML = mostrar  
+    var faz = " o resultado da soma é " + juncao4;body.innerHTML = faz  ;
   
   }
   
@@ -52,7 +52,7 @@ function texto(){
     var float1 = parseFloat (rev1);
     console.log(float1)
     var mostrar = document.getElementById("show3");
-    var show = "o resultado da subtração é " + float1;mostrar.innerHTML = show
+    var show = "o resultado da subtração é " + float1;mostrar.innerHTML = show;
     
     
   }
@@ -60,7 +60,7 @@ function texto(){
   function nome(){
    var nome = document.getElementById("name").value;
     var h2 = document.getElementById("show4");
-   var mostr = "seja bem vindo(a)," + nome;h2.innerHTML = mostr
+   var mostr = "seja bem vindo(a)," + nome;h2.innerHTML = mostr;
     
   }
   
@@ -70,7 +70,7 @@ function texto(){
     var resultado = parseFloat(conversao);
     var final = resultado * resultado;
     var log = document.getElementById("show5");
-    var end = "o resultado da potência é " + final;log.innerHTML = end
+    var end = "o resultado da potência é " + final;log.innerHTML = end;
   
   }
   
