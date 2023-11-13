@@ -26,7 +26,7 @@ function texto(){
   
   }
   
-  function texto(){
+  function soma(){
     //elemento pego do id//
     var num = document.getElementById("som");
     var num2 = document.getElementById("som2");
