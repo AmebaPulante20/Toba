@@ -70,4 +70,6 @@ function texto(){
     var end = "o resultado da potência é " + final;log.innerHTML = end;
   
   }
+
+  
   
