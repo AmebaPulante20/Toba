@@ -30,6 +30,7 @@ tecla.onkeydown = function (evento) {
     }
 }
 
+
 function tocaSom (seletorAudio) {
     const elemento = document.querySelector(seletorAudio);
 
