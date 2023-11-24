@@ -1,71 +1,126 @@
 body{background: radial-gradient(circle, #eb39e2, #1881d8);}
 
-body, div, section, a, span, p, button, input {
-  font-family: Tahoma;
-  line-height: 1;
-  box-sizing: border-box;
-  font-size: 20px;
-  font-weight: 900;
-}
-button {
-  cursor: pointer;
-}
-#container {
-  width: 222px;
-  margin: 50px auto;
-  padding: 10px;
-  background: #EEEEEE;
-  border: 1px solid #E0E0E0;
-}
-#display {
-  width: 190px;
-  margin: 5px;
-  text-align: right;
-  padding: 20px 15px;
-  border-radius: 5px;
-  background: #EF6C00;
-  color: #FFF;
-}
-#display .clean {
-  float: left;
-  font-size: 17px;
-  border-radius: 50%;
-  background: #FFF;
-  color: #EF6C00;
-  width: 22px;
-  height: 22px;
-  text-align: center;
-  cursor: pointer;
-}
-#inputs {
-  height: 205px;
-}
-#numbers {
-  width: 150px;
-  float: left;
-}
-#operations {
-  width: 50px;
-  float: right;
-}
-.defaultButton {
-  border-radius: 5px;
-  border: 1px solid #E0E0E0;
-  margin: 5px;
-  width: 40px;
-  padding: 10px 0;
-  text-align: center;
-}
-#numbers .defaultButton {
-  background: #1976D2;
-  border: 1px solid #1565C0;
-  color: #FFF;
-}
-#numbers .defaultButton.greenBtn {
-  background: #558B2F;
-  color: #FFF;
-}
-#operations .defaultButton {
-  background: #757575;
-  color: #FFF;
-}
+  
+  h1{
+    font-family:sans-serif;
+    color:white;
+    text-shadow: 3px, 3px, 3px;
+    
+   
+  }
+  h2{
+    color:black;
+    font-size:20px;
+    font-family:sans-serif;
+  }
+  .titulo{
+    
+    font-size:25px;
+    color:black;
+    font-family:monospace;
+  }
+  .bloco{
+    background:gray;
+  text-align:center;
+    width:300px;
+    border-style:double;
+    border-radius:5px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:auto;
+    background-position:absolute;
+    display:table;
+    vertical-align:absolute;
+  }
+  
+  .input{
+    border-radius:10px;
+    color:red;
+    inline-size:1cm;
+    text-align:center;
+   }
+  #sinal{
+    color:white;
+  }
+  h3{
+    text-align:right;
+    font-family:bradley hand, cursive;
+  }
+  #apresentacao{
+    text-align:center;
+    padding:0.3cm;
+  }
+  #seunome{
+    font-size:25px;
+    font-family:sans-serif;
+  }
+
+
+  :root {
+    --cinza: #aaa;
+    --vermelha: #e93d50;
+    --vermelha-escura: #af303f;
+    --branca: #fff;
+    --luz: rgb(229, 255, 0);
+  }
+  
+  body {
+    align-items: center;
+    background: linear-gradient(45deg, #a7cfdf 0%,#23538a 100%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+  }
+  
+  h1 {
+    color: var(--branca);
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .teclado {
+    background: linear-gradient(to bottom, #eeeeee 0%,#cccccc 100%);
+    box-shadow: 6px 8px 0 6px #666, 10px 10px 10px #000;
+    border-radius: 30px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+  }
+  
+  .tecla {
+    background-color: var(--branca);
+    border-radius: 30px;
+    box-shadow: 3px 3px 0 var(--cinza);
+    color: var(--vermelha);
+    cursor: pointer;
+    height: 120px;
+    font-size: 1.75em;
+    font-weight: bold;
+    line-height: 120px;
+    text-align: center;
+    width: 120px;
+  }
+  
+  .tecla.ativa,
+  .tecla:active {
+    background-color: var(--vermelha);
+    border: 4px solid  var(--vermelha);
+    box-shadow: 3px 3px 0 var(--vermelha-escura) inset;
+    color: var(--branca);
+    outline: none;
+  }
+  
+  .tecla.focus,
+  .tecla:focus {
+    outline: none;
+    box-shadow: 1px 1px 10px var(--luz);
+  }
+  
+  .tecla.ativa:focus,
+  .tecla:active:focus {
+    box-shadow: 3px 3px 0 var(--vermelha-escura) inset, 1px 1px 10px var(--luz);
+  }
+  

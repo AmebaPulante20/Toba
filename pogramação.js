@@ -1,153 +1,75 @@
-var Screen = React.createClass({
-  render: function(){
-    return (
-      <div id="display">
-        <span className="clean" onClick={this.props.onClickClean}>x</span>
-        {this.props.displayText}
-      </div>
-    );
+function texto(){
+    //elemento pego do id//
+    var num = document.getElementById("num");
+    var num2 = document.getElementById("num2");
+    //convertendo para " int "//
+    var conversao = num.value;
+    var conv2 = num2.value
+    //onde é feito a conta//
+    var juncao = parseFloat(conversao * conv2 );
+    var juncao2=parseFloat(conv2 * conversao);
+    //mostrar na pagina//
+    var body = document.getElementById("show");
+    var mostrar = " o resultado da multiplicação é " + juncao2;body.innerHTML = mostrar  ;
+  
   }
-});
-
-var Inputs = React.createClass({
-  render: function(){
-    return (
-      <div id="inputs">
-        <Numbers onClick={this.props.onClickOperando} onClickTotal={this.props.onClickOperador}/>
-        <Operations onClick={this.props.onClickOperador}/>
-      </div>
-    );
+  
+  function numero(){
+    var number = document.getElementById("div");
+    var num2 = document.getElementById("div2");
+    var conv = number.value;
+    var conv2 = num2.value;
+    var resultado = parseFloat(conv / conv2);
+    var resul2 = parseFloat(conv2 / conv);
+    var mostrar = document.getElementById("show2");
+    var ver = "o resultado da divisao é " + resultado;mostrar.innerHTML = ver;
+  
   }
-});
-
-var Numbers = React.createClass({
-  getInitialState: function(){
-    return {
-      buttons: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.']
-    }
-  },
-  render: function(){
-    var buttonElements = [];
-    for(var i = 0; i < this.state.buttons.length; i++){
-      buttonElements.push(
-        <Button label={this.state.buttons[i]} onClick={this.props.onClick}/>
-      );
-    }
-    return (
-      <div id="numbers">
-        {buttonElements}
-        <Button label="=" onClick={this.props.onClickTotal} className="greenBtn"/>
-      </div>
-    );
+  
+  function soma(){
+    var soma = document.getElementById("som");
+    var soma1 = document.getElementById("som2");
+    var conv1 = soma.value;
+    var conv3 = soma1.value;
+    var resultado = parseFloat(conv1 + conv3);
+    var resul2 = parseFloat(conv3 + conv1);
+    var mostrar = document.getElementById("show9");
+    var faz = "o resultado da soma é " + resultado;mostrar.innerHTML = faz
+  
   }
-});
 
-var Operations = React.createClass({
-  getInitialState: function(){
-    return {
-      buttons: ['+', '-', '/', 'x']
-    }
-  },
-  render: function(){
-    var buttonElements = [];
-    for(var i = 0; i < this.state.buttons.length; i++){
-      buttonElements.push(
-        <Button label={this.state.buttons[i]} onClick={this.props.onClick}/>
-      );
-    }
-    return (
-      <div id="operations">
-        {buttonElements}
-      </div>
-    );
-  }
-});
 
-var Button = React.createClass({
-  render: function(){
-    var classes = ['defaultButton'];
-    classes.push(this.props.className);
-    return (
-      <button type="button" className={classes.join(' ')} onClick={(e) => this.props.onClick(e, this.props.label)}>
-        {this.props.label}
-      </button>
-    );
-  }
-});
+  
 
-var Container = React.createClass({
-  getInitialState: function(){
-    return {
-      operando: '',
-      operador: '',
-      display: '0',
-      resultDisplayed: false
-    }
-  },
-  onClickOperando: function(e, label){
-    if(this.state.display == '0' || isNaN(this.state.display) || this.state.resultDisplayed){
-      var display = label;
-      this.setState({ resultDisplayed: false, });
-    } else {
-      var display = this.state.display + label;
-    }
+  function number(){
+    var num = document.getElementById("num2");
+    var num2 = document.getElementById("num3");
+    var rev1 = num.value;
+    var rev2 = num2.value;
+    var float1 = parseFloat (rev1);
+    console.log(float1)
+    var mostrar = document.getElementById("show3");
+    var show = "o resultado da subtração é " + float1;mostrar.innerHTML = show;
     
-    this.setState({ display: display });
-  },
-  onClickOperador: function(e, label){
-    if(this.state.operador.length > 0){
-      this.calculate();
-      if(label == '='){
-        this.setState({
-          resultDisplayed: true,
-          operador: ''
-        });
-      } else {
-        this.setState({
-          resultDisplayed: true,
-          operador: label
-        });
-      }
-    } else {
-      this.setState({
-        operando: this.state.display,
-        operador: label,
-        display: label
-      });
-    }
-  },
-  onClickClean: function(){
-    this.setState(this.getInitialState);
-  },
-  calculate: function(){var displayResult;
-      switch(this.state.operador){
-        case '+':
-          displayResult = parseFloat(this.state.operando) + parseFloat(this.state.display);
-          break;
-        case '-':
-          displayResult = parseFloat(this.state.operando) - parseFloat(this.state.display);
-          break;
-        case '/':
-          displayResult = parseFloat(this.state.operando) / parseFloat(this.state.display);
-          break;
-        case 'x':
-          displayResult = parseFloat(this.state.operando) * parseFloat(this.state.display);
-          break;
-      }
-      this.setState({
-        operando: displayResult,
-        display: displayResult
-      });
-  },
-  render: function() {
-    return (
-      <div id="container">
-        <Screen displayText={this.state.display} onClickClean={this.onClickClean}/>
-        <Inputs onClickOperando={this.onClickOperando} onClickOperador={this.onClickOperador}/>
-      </div>
-    );
+    
   }
-});
+  
+  function nome(){
+   var nome = document.getElementById("name").value;
+    var h2 = document.getElementById("show4");
+   var mostr = "seja bem vindo(a)," + nome;h2.innerHTML = mostr;
+    
+  }
+  
+  function result(){
+    var numero = document.getElementById("pote");
+    var conversao = numero.value;
+    var resultado = parseFloat(conversao);
+    var final = resultado * resultado;
+    var log = document.getElementById("show5");
+    var end = "o resultado da potência é " + final;log.innerHTML = end;
+  
+  }
 
-React.render(<Container/>, document.getElementById('calculadora'));
+  
   

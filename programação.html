@@ -130,17 +130,50 @@
             <input type="submit" value="Enviar Feedback">
           </form>
         
-          <div class="container">
-            <h1 class="page-title">
-                Calculadora
-            </h1>
-            <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-calculadora.svg" class="page-logo"
-                alt="">
-        <a href="https://alura.com.br/" target="_blank">
-            <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
-        </a>
+           <!-- FIM(APRESENTAÇÃO)-->
+           <br>
+           <hr>
+           <!--TITULO-->
+           <div class="bloco">
+             <h1>operações matematicas</h1>
+           <!--/-->
+           <hr>
+            <label class="titulo"> multiplicação(*)</label> <br>
+               <input type ="number" id="num" class="input"> <label id="sinal"> x </label>
+               <input type ="number" id="num2" class="input"> <br>
+              <button type = "submit" id="conta" onclick="texto()" >Resultado</button>
+           <h2 id="show"></h2>
+           </div>
+           
+           
+           <div class="bloco">
+           <label class="titulo"> divisão(/)</label> <br>
+               <input type ="number" id="div" class="input"><label id="sinal"> / </label>
+               <input type ="number" id="div2"class="input"> <br>
+             <button type="submit" id="clicar" onclick="numero()">Resultado</button>
+           <h2 id="show2"></h2>
+           </div>
+           
+           <div class="bloco">
+            <label class="titulo"> soma(+)</label> <br>
+                <input type ="number" id="som" class="input"><label id="sinal"> + </label>
+                <input type ="number" id="som2"class="input"> <br>
+              <button type="submit" id="soma" onclick="soma()">Resultado</button>
+            <h2 id="show9"></h2>
+            </div>
+            
+           
+           <div class="bloco">
+             <label class="titulo"> potência(^2) </label> <br>
+             <input type="number" id="pote" class="input"> <br>
+             <button type="submit" onclick="result()"> Resultado </button>
+             <h2 id="show5"></h2>
+            
+           </div>
           
-        <div id="calculadora"></div>
+           <!--ALERT-->
+
+           <script src="pogramação.js"></script>
 
 </body>
 
