@@ -7,120 +7,120 @@ body{background: radial-gradient(circle, #eb39e2, #1881d8);}
     text-shadow: 3px, 3px, 3px;
     
    
-  }
-  h2{
-    color:black;
-    font-size:20px;
-    font-family:sans-serif;
-  }
-  .titulo{
+    body {
+      font-family: 'Roboto Mono',monospace;
+      background-image: url('https://cdn.discordapp.com/attachments/468228661418524673/823877228315541544/unknown.png');
+      background-color: #000000;
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
     
-    font-size:25px;
-    color:black;
-    font-family:monospace;
-  }
-  .bloco{
-    background:gray;
-  text-align:center;
-    width:300px;
-    border-style:double;
-    border-radius:5px;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:auto;
-    background-position:absolute;
-    display:table;
-    vertical-align:absolute;
+    .container {
+      text-align: center;
+      padding: 20px;
+      height: 100vh;
+    }
+    
+    .page-title {
+      color: #ffffff;
+      margin: 0 0 5px;
+    }
+    
+    .page-subtitle {
+      color: #ffffff;
+      margin-top: 5px;
+    }
+    
+    .page-logo {
+      width: 200px;
+    }
+    
+    .alura-logo {
+      width: 40px;
+      position: absolute;
+      top: 10px;
+      right:10px;
+    }
+  
+    *:focus {
+      outline: 0 !important;
+    }
+  
+  
+  .espaçamento {
+    margin: 0 auto;
+    height:40px;
   }
   
-  .input{
-    border-radius:10px;
-    color:red;
-    inline-size:1cm;
-    text-align:center;
-   }
-  #sinal{
-    color:white;
-  }
-  h3{
-    text-align:right;
-    font-family:bradley hand, cursive;
-  }
-  #apresentacao{
-    text-align:center;
-    padding:0.3cm;
-  }
-  #seunome{
-    font-size:25px;
-    font-family:sans-serif;
-  }
-
-
-  :root {
-    --cinza: #aaa;
-    --vermelha: #e93d50;
-    --vermelha-escura: #af303f;
-    --branca: #fff;
-    --luz: rgb(229, 255, 0);
+  .calculadora {
+    margin: 0 auto;
+    width: 294px;
+    background-color: black;
+    border: 1px solid #ddd;
   }
   
-  body {
-    align-items: center;
-    background: linear-gradient(45deg, #a7cfdf 0%,#23538a 100%);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
-    min-height: 100vh;
+  .tela {
+    width: 279px;
+    border: 0;
+    border-radius: 1px;
+    height: 60px;
+    padding-right: 15px;
+    padding-top: 10px;
+    background-color: #202020;
+    text-align: right;
+    margin-right: 6px;
+    font-size: 2.5rem;
+    color: white;
+    overflow-x: auto;
+    transition: all .2s ease-in-out;
   }
   
-  h1 {
-    color: var(--branca);
-    margin-bottom: 20px;
-    font-size: 2rem;
-  }
-  
-  .teclado {
-    background: linear-gradient(to bottom, #eeeeee 0%,#cccccc 100%);
-    box-shadow: 6px 8px 0 6px #666, 10px 10px 10px #000;
-    border-radius: 30px;
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 10px;
-  }
-  
-  .tecla {
-    background-color: var(--branca);
-    border-radius: 30px;
-    box-shadow: 3px 3px 0 var(--cinza);
-    color: var(--vermelha);
-    cursor: pointer;
-    height: 120px;
-    font-size: 1.75em;
-    font-weight: bold;
-    line-height: 120px;
+  .contas div {
+    color: white;
+    display: inline-block;
+    border: 0;
+    border-radius: 1px;
+    width: 40px;
     text-align: center;
-    width: 120px;
+    padding: 10px;
+    margin: 20px 4px 10px 0;
+    cursor: pointer;
+    background-color: #202020;
+    transition: border-color .2s ease-in-out, background-color .2s, box-shadow .2s;
   }
   
-  .tecla.ativa,
-  .tecla:active {
-    background-color: var(--vermelha);
-    border: 4px solid  var(--vermelha);
-    box-shadow: 3px 3px 0 var(--vermelha-escura) inset;
-    color: var(--branca);
-    outline: none;
+  .painel-numeros {
+    display: inline-block;
   }
   
-  .tecla.focus,
-  .tecla:focus {
-    outline: none;
-    box-shadow: 1px 1px 10px var(--luz);
+  .numeros div {
+    color: white;
+    display: inline-block;
+    border: 0;
+    border-radius: 1px;
+    width: 40px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 4px 10px 0;
+    cursor: pointer;
+    background-color: #202020;
+    transition: border-color .2s ease-in-out, background-color .2s, box-shadow .2s;
   }
   
-  .tecla.ativa:focus,
-  .tecla:active:focus {
-    box-shadow: 3px 3px 0 var(--vermelha-escura) inset, 1px 1px 10px var(--luz);
+  .igual {
+    display: inline-block;
+    border: 0;
+    border-radius: 1px;
+    width: 40px;
+    text-align: center;
+    padding: 102px 10px;
+    margin: 10px 6px 10px 0;
+    vertical-align: top;
+    cursor: pointer;
+    color: #FFF;
+    background-color: #202020;
+    transition: all .2s ease-in-out;
+  }
   }
   
